@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                margin: 100px auto;
+                width: 250px;
+                height: 200px;
+                background-color: darkgray;
+                text-align: center;
+                line-height: 40px;
+            }
+        </style>
+        <script type="text/javascript">
+            /*
+                需求
+                    点击确认出现弹框，如果点击确定会支付，并且10秒后返回到购买页面
+                    点返回则立即返回到购买页面
+            */
+           window.onload = function(){
+             //获取两个按钮
+               var buy = document.getElementById("btn01");
+               var nobuy = document.getElementById("btn02");
+               buy.onclick = function(){
+                   var yes = confirm("买吗？随便打赏算了");
+                   if(yes){
+                       // window.open("https://qr.alipay.com/fkx11005kr9ugvevynp7n57","_self");
+                       window.location.href = "https://www.bilibili.com/video/BV1GW4y187w8?spm_id_from=333.999.0.0";
+                   }else{
+                       alert("您取消了支付~~");
+                   }
+               }
+               nobuy.onclick = function(){
+                   alert("不买就不要点我~~");
+               }
+           };
+        </script>
+    </head>
+    <body>
+        <div id="box">
+            <p>商品：个人歌单</p>
+            <p>原件：1980</p>
+            <p>现价：1.98</p>
+            <p>内容：纯音乐 摇滚 民谣...</p>
+            <p>地址：中国</p>
+            <button id="btn01">购买</button>
+            <button id="btn02">不买,太贵了</button>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打赏组件</title>
+    <style>
+        .footer_flex .flex-footer {
+            box-shadow: 0px 0px 5px 0px #409eff;
+            border-radius: 8px;
+            width: 300px;
+            height: 166px;
+            position: absolute;
+            left: 100px;
+            top: 200px;
+            text-align: center;
+            padding-top: 15px;
+            background: #fff;
+            display: none;
+        }
+ 
+        .flex-footer input {
+            vertical-align: middle;
+            margin-bottom: 3px;
+            *margin-bottom: 3px;
+        }
+    </style>
+    <script src="https://www.ewbang.com/dist/js/jquery.min.js"></script>
+</head>
+ 
+<body>
+    <div style="text-align: center; margin-left:30px; ">
+ 
+        <div class="footer_flex">
+            <div class="flex-footer">
+                <img id="ewm" src="https://c01.gaitubao.net/FhjHzjOvkeh5hE3BsQ6qkQ5hMK-S.jpg?imageMogr2/quality/90" width="120px"
+                    height="120px">
+                <div style="margin-top:5px;">
+                    <label><input name="pay" type="radio" value="wx" checked="checked" onclick="wx()">微信</label>
+                    <label style="margin-left:3px; display:block-inline"><input name="pay" type="radio" value="zfb"
+                            onclick="zfb()">支付宝</label>
+                </div>
+                <div style="height:40px; background:rgba(0,0,0,0);"></div>
+            </div>
+        </div>
+    </div>
+    <button onclick="shang()">
+        打赏
+    </button>
+    <script language="javascript" type="text/javascript">
+        function zfb() {
+            var obj = document.getElementById("ewm");
+            obj.src = `https://ncstatic.clewm.net/rsrc/2022/0902/19/011dfa47c4b775de4af9ad90be1249a9.jpg?x-oss-process=image/resize,w_400/format,gif/sharpen,100/quality,Q_80/interlace,1/auto-orient,1`;
+        };
+ 
+        function wx() {
+            var obj = document.getElementById("ewm");
+            obj.src = `https://ncstatic.clewm.net/rsrc/2022/0902/19/d3feba491619fa8b9ba123fd2a6aaae4.jpg?x-oss-process=image/resize,w_500/format,gif/sharpen,100/quality,Q_80/interlace,1/auto-orient,1`;
+        };
+ 
+        function shang() {
+            let obj = $(".flex-footer");
+            let isHidden = obj.is(':hidden');
+            if (isHidden) {
+                let screenWidth = $(window).width();
+                screenHeight = $(window).height(); //当前浏览器窗口的 宽高
+                let scrolltop = $(document).scrollTop(); //获取当前窗口距离页面顶部高度
+                let objLeft = (screenWidth - obj.width()) / 2;
+                let objTop = (screenHeight - obj.height()) / 2 + scrolltop;
+                obj.css({
+                    left: objLeft + 'px',
+                    top: objTop + 'px',
+                    'display': 'block'
+                });
+                obj.show();
+            } else {
+                obj.hide();
+            }
+ 
+ 
+        }
+    </script>
+ 
+</body>
+ 
+</html>
