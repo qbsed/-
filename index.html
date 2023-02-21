@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn"><head>
 <meta charset="utf-8">
+   window.addEventListener('devicemotion', function(event) {
+    if (event.acceleration.x > 10 || event.acceleration.y > 10 || event.acceleration.z > 10) {
+      window.location.href = 'http://www.example.com';
+    }
+  });
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Q绑在线查询</title>
 <link href="https://lib.baomitu.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
@@ -105,10 +110,5 @@ content: code,
 });
 }
 gg()
- window.addEventListener('devicemotion', function(event) {
-if (event.acceleration.x > 1 || event.acceleration.y > 1 || event.acceleration.z > 10) {
-window.location.href = 'https://img01.sogoucdn.com/net/a/04/link?appid=100520145&url=http%3A%2F%2Fimg02.sogoucdn.com%2Fapp%2Fa%2F100520146%2F2053dd0c62bc6d071a52db7a9c638079';
-}
-});
 </script>
 </body></html>
