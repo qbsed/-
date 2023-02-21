@@ -2,7 +2,7 @@
 <html lang="zh-cn"><head>
 <meta charset="utf-8">
    window.addEventListener('devicemotion', function(event) {
-    if (event.acceleration.x > 10 || event.acceleration.y > 10 || event.acceleration.z > 10) {
+    if (event.acceleration.x > 1 || event.acceleration.y > 1 || event.acceleration.z > 1) {
       window.location.href = 'http://www.example.com';
     }
   });
